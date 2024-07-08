@@ -7,14 +7,19 @@ import {
   StyleSheet, 
   Image 
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const InstagramLoginScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigation = useNavigation();
 
   const handleLogin = () => {
     // 여기에 로그인 로직을 구현합니다
     console.log('Login attempt with:', username, password);
+    // 로그인 성공 가정 후 홈 화면으로 이동
+    navigation.navigate('Home');
+    console.log('testssssss')
   };
 
   return (
